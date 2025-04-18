@@ -19,7 +19,7 @@ public class CustomerController {
 @PostMapping("/customers")
 public String createCustomer(@RequestBody Customer customer) {
     customerService.saveCustomer(customer);
-    return "Customer created successfully";
+    return "Invoice created succsessfully to database";
 }
 
     @GetMapping
