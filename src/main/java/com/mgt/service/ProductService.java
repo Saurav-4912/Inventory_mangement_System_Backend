@@ -1,19 +1,19 @@
-package com.mgt.service;
+package com.mgt.Service;
 
-import com.mgt.model.Product;
+import com.mgt.Model.Product;
 import org.springframework.web.multipart.MultipartFile;
 
 import java.util.List;
 
 public interface ProductService {
+	public boolean addPro(Product product, MultipartFile imageFile);
 
-    boolean addPro(Product product, MultipartFile imageFile);
+	public List<Product> getAllPro();
 
-    List<Product> getAllPro();
+	public Product updatePro(Product product, MultipartFile image);
 
-    Product updatePro(Product product , MultipartFile productImage);
+	public boolean deletePro(Integer product_id);
 
-    boolean deletePro(Integer product_id);
+	public Product getProductById(int id);
 
-    Product getProductById(Integer product_id);
 }
