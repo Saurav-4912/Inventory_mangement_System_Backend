@@ -3,7 +3,6 @@ package com.mgt.Controller;
 import com.mgt.Model.Customer;
 import com.mgt.Service.CustomerService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -16,12 +15,11 @@ public class CustomerController {
     @Autowired
     private CustomerService customerService;
 
-  
 
-    @PostMapping("/customers")
-public ResponseEntity<Void> createCustomer(@RequestBody Customer customer) {
+@PostMapping("/customers")
+public String createCustomer(@RequestBody Customer customer) {
     customerService.saveCustomer(customer);
-    return ResponseEntity.noContent().build(); 
+    return "Customer created successfully";
 }
 
     @GetMapping
