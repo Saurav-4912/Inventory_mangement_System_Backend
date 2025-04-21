@@ -1,5 +1,7 @@
 package com.mgt.Model;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+
 import jakarta.persistence.*;
 
 @Entity
@@ -37,6 +39,7 @@ public class CustomerProduct {
 
     @ManyToOne
     @JoinColumn(name = "customer_id")
+    @JsonBackReference
     private Customer customer;
 
     public int getProductId() {
